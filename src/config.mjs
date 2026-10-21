@@ -1,5 +1,5 @@
-import { existsSync, lstatSync, readFileSync } from "node:fs";
-import { basename, dirname, isAbsolute, resolve } from "node:path";
+import { existsSync, lstatSync, readFileSync, realpathSync } from "node:fs";
+import { basename, dirname, isAbsolute, relative, resolve, sep } from "node:path";
 import { processArguments } from "./entrypoint.mjs";
 import { processEnvironment } from "./environment.mjs";
 // @red-cup-engineering/computer-file-engineering-services-section (computer-file-engineering-services-section)
@@ -57,7 +57,7 @@ export function processDataRootConfig(options) {
         dataRoot = resolve(cwd, argvRoot.value);
         source = "argv";
     }
-    receiveServicesSectionDataRoot(dataRoot, source);
+    receiveResolvedServicesSectionDataRoot(dataRoot, source);
     return Object.freeze({
         dataRoot,
         source,
@@ -118,8 +118,72 @@ function rejectLegacyDataRootEnv(env, legacyEnvNames, envName) {
 }
 /** Git checkout layout and executable installation roots do not establish
  * data ownership. Inspect just this owner path and its immediate data entry. */
-function receiveServicesSectionDataRoot(dataRoot, source) {
+/** Receive an exact explicit section owner, independently of process input resolution.
+ * Metadata only: callers own filing/authority and receive again before effects. */
+export function receiveServicesSectionDataRoot(sectionRoot) {
+    if (!explicitAbsolutePath(sectionRoot)) {
+        throw new TypeError("sectionRoot must be an explicit nonempty absolute canonical path");
+    }
+    receiveResolvedServicesSectionDataRoot(sectionRoot, "explicit");
+    return sectionRoot;
+}
+
+/** CDE's existing data-directory convention, using the shared section law. */
+export function receiveOwnerDataRoot(root) {
+    if (!explicitAbsolutePath(root) || basename(root) !== "data") {
+        throw new TypeError("ownerDataRoot must name the actual owning services-section/data");
+    }
+    const section = dirname(root);
+    const refusal = (reason) => new TypeError(`ownerDataRoot (${root}): ${reason}`);
+    receiveSectionPathShape(section, refusal);
+    // Valid-shaped missing roots retain CDE's original native filesystem errno.
+    const info = lstatSync(root);
+    if (!info.isDirectory() || realpathSync(root) !== root) {
+        throw new TypeError("ownerDataRoot must be an existing unredirected directory");
+    }
+    receiveSectionPathMetadata(section, refusal);
+    return root;
+}
+
+/** Metadata confinement only; missing descendants do not authorize creation. */
+export function receiveOwnedDataDestination(ownerDataRoot, destination, { kind = "directory", label = "data destination" } = {}) {
+    const root = receiveOwnerDataRoot(ownerDataRoot);
+    if (kind !== "directory" && kind !== "file") {
+        throw new TypeError("owned destination kind must be directory or file");
+    }
+    const suffix = explicitAbsolutePath(destination) ? relative(root, destination) : undefined;
+    if (suffix === undefined || suffix === "" || suffix === ".." || suffix.startsWith(".." + sep) || isAbsolute(suffix)) {
+        throw new TypeError(`${label} must be strictly inside ownerDataRoot`);
+    }
+    let at = destination, target = true;
+    while (true) {
+        let info;
+        try { info = lstatSync(at); }
+        catch (error) { if (error.code !== "ENOENT") throw error; }
+        if (info) {
+            if (!(target && kind === "file" ? info.isFile() : info.isDirectory()) || realpathSync(at) !== at) {
+                throw new TypeError(`${label} or existing parent is redirected or has the wrong kind`);
+            }
+            break;
+        }
+        at = dirname(at); target = false;
+    }
+    return destination;
+}
+
+function explicitAbsolutePath(value) {
+    return typeof value === "string" && value.trim().length > 0 && !/[\r\n\0]/u.test(value)
+        && isAbsolute(value) && resolve(value) === value;
+}
+
+function receiveResolvedServicesSectionDataRoot(dataRoot, source) {
     const refusal = (reason) => new Error(`process data root from ${source} (${dataRoot}): ${reason}`);
+    receiveSectionPathShape(dataRoot, refusal);
+    receiveSectionPathMetadata(dataRoot, refusal);
+}
+
+// One semantic rule: the resolver and explicit adapters differ only at their boundaries.
+function receiveSectionPathShape(dataRoot, refusal) {
     if (basename(dataRoot) === "data") {
         throw refusal("pass the owning services section above data/, never the data tier itself");
     }
@@ -131,6 +195,9 @@ function receiveServicesSectionDataRoot(dataRoot, source) {
         dataRoot === "/gnu/store" || dataRoot.startsWith("/gnu/store/")) {
         throw refusal("home .local, node_modules and immutable store paths cannot own runtime data");
     }
+}
+
+function receiveSectionPathMetadata(dataRoot, refusal) {
     let current = dataRoot;
     while (true) {
         let entry;
