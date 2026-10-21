@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, lstatSync, readFileSync } from "node:fs";
 import { basename, dirname, isAbsolute, resolve } from "node:path";
 import { processArguments } from "./entrypoint.mjs";
 import { processEnvironment } from "./environment.mjs";
@@ -14,17 +14,12 @@ const pathExists = existsSync;
 function readFileUtf8(filePath) {
     return readFileSync(filePath, "utf8");
 }
-/** Resolve the canonical settlement data root for a process boundary.
- *
- *  `defaultRoot` must already be absolute (every caller derives it from
- *  {@link processPackageRoot}) — the default settlement root never depends
- *  on the invoking shell's working directory. `cwd` only interprets a
- *  user-supplied relative override (`--data-root`, an env var, or a config
- *  file's `dataRoot`), the normal CLI convention.
- *  @throws {Error} when `defaultRoot` is not absolute, or the resolved root
- *   would place `data/` at the checkout root, at `<checkout root>/data`, or
- *   anywhere inside the checkout other than a `*-services-section` or
- *   `apps/<name>` package directory. */
+/** Resolve the owning services section immediately above its data/ tree.
+ * `defaultRoot` must be absolute; only explicit overrides depend on cwd.
+ * Config, environment and argv keep their existing precedence. Executable
+ * package roots need an explicit owner binding when they are not a section.
+ * Validates real existing owner ancestry and any existing data/ entry without
+ * writing. Callers must receive destinations again at their effect boundary. */
 export function processDataRootConfig(options) {
     if (!isAbsolute(options.defaultRoot)) {
         throw new Error(`process data root default must be absolute, got ${options.defaultRoot}`);
@@ -62,8 +57,7 @@ export function processDataRootConfig(options) {
         dataRoot = resolve(cwd, argvRoot.value);
         source = "argv";
     }
-    rejectDataTierRoot(dataRoot, source);
-    refuseCheckoutDataRoot(dataRoot, source);
+    receiveServicesSectionDataRoot(dataRoot, source);
     return Object.freeze({
         dataRoot,
         source,
@@ -122,61 +116,47 @@ function rejectLegacyDataRootEnv(env, legacyEnvNames, envName) {
         }
     }
 }
-/** Walk upward from `startDir` for the nearest `.git` entry (directory or,
- *  for a worktree, file); `undefined` when `startDir` lies outside any git
- *  checkout — a resolved root outside a checkout (e.g. a `/tmp` test
- *  fixture, or a real production data path) is this law's non-concern. */
-function gitTopLevelOf(startDir) {
-    let current = resolve(startDir);
+/** Git checkout layout and executable installation roots do not establish
+ * data ownership. Inspect just this owner path and its immediate data entry. */
+function receiveServicesSectionDataRoot(dataRoot, source) {
+    const refusal = (reason) => new Error(`process data root from ${source} (${dataRoot}): ${reason}`);
+    if (basename(dataRoot) === "data") {
+        throw refusal("pass the owning services section above data/, never the data tier itself");
+    }
+    if (!basename(dataRoot).endsWith("-services-section") || basename(dataRoot) === "-services-section") {
+        throw refusal("expected an owning *-services-section directory; select it through config, environment or argv");
+    }
+    const components = dataRoot.split(/[\\/]/);
+    if (components.includes(".local") || components.includes("node_modules") ||
+        dataRoot === "/gnu/store" || dataRoot.startsWith("/gnu/store/")) {
+        throw refusal("home .local, node_modules and immutable store paths cannot own runtime data");
+    }
+    let current = dataRoot;
     while (true) {
-        if (existsSync(resolve(current, ".git")))
-            return current;
+        let entry;
+        try {
+            entry = lstatSync(current);
+        }
+        catch (error) {
+            throw refusal(`owner ancestry must exist as real directories (${error?.code ?? "unreadable"})`);
+        }
+        if (entry.isSymbolicLink() || !entry.isDirectory()) {
+            throw refusal("owner ancestry must be real directories without symlink backing");
+        }
         const parent = dirname(current);
-        if (parent === current)
-            return undefined;
+        if (parent === current) break;
         current = parent;
     }
-}
-/** A `*-services-section` directory, or an `apps/<name>` package directory
- *  (its own parent literally named `apps`) — the two shapes the org-layering
- *  law allows a `data/` directory to live beside. */
-function isServicesSectionOrAppDirectory(dir) {
-    if (basename(dir).endsWith("-services-section"))
-        return true;
-    return basename(dirname(dir)) === "apps";
-}
-/** Refuse a resolved settlement root that would place `data/` inside a git
- *  checkout anywhere but a `*-services-section` or `apps/<name>` package
- *  directory — the checkout root and `<checkout root>/data` named
- *  explicitly (working-discipline: "the checkout is not a runtime"). */
-function refuseCheckoutDataRoot(dataRoot, source) {
-    const checkoutRoot = gitTopLevelOf(dataRoot);
-    if (checkoutRoot === undefined)
-        return;
-    if (dataRoot === checkoutRoot) {
-        throw new Error(`process data root from ${source} is the checkout root (${checkoutRoot}); `
-            + "the checkout must carry no data/ — pass a *-services-section or apps/<name> package directory instead");
+    let dataEntry;
+    try {
+        dataEntry = lstatSync(resolve(dataRoot, "data"));
     }
-    if (dataRoot === resolve(checkoutRoot, "data")) {
-        throw new Error(`process data root from ${source} is <checkout root>/data (${dataRoot}); `
-            + "pass the settlement root this would itself be the data/ subdirectory of, never the data directory itself");
+    catch (error) {
+        if (error?.code !== "ENOENT") throw refusal(`cannot inspect data/ (${error?.code ?? "unreadable"})`);
     }
-    const dataDir = resolve(dataRoot, "data");
-    if (basename(dataDir) !== "data" || !isServicesSectionOrAppDirectory(dataRoot)) {
-        throw new Error(`process data root from ${source} (${dataRoot}) is not a *-services-section or apps/<name> package `
-            + `directory inside the checkout (${checkoutRoot}); refusing to create ${dataDir}`);
+    if (dataEntry !== undefined && (dataEntry.isSymbolicLink() || !dataEntry.isDirectory())) {
+        throw refusal("existing data/ must be a real directory without symlink backing");
     }
-}
-function rejectDataTierRoot(dataRoot, source) {
-    if (basename(dataRoot) !== "data")
-        return;
-    const hasDataTierShape = pathExists(resolve(dataRoot, "logs")) ||
-        pathExists(resolve(dataRoot, "state")) ||
-        pathExists(resolve(dataRoot, "records")) ||
-        pathExists(resolve(dataRoot, "record"));
-    if (!hasDataTierShape)
-        return;
-    throw new Error(`process data root from ${source} names a data tier (${dataRoot}); pass the settlement root instead (${dirname(dataRoot)})`);
 }
 function readFlagValue(args, flag, label) {
     let found = false;
