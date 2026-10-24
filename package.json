@@ -1,11 +1,11 @@
 {
-  "name": "@red-cup-engineering/node-process-services-section",
+  "name": "@red-cup-engineering/node-process-engineering-services-section",
   "version": "0.3.0",
   "type": "module",
   "description": "Shared Node process boundary helpers: argv, environment, clock, entropy, stdio, command-result interpretation and lifecycle-record projection (execution itself is @red-cup-engineering/execute-javascript-node-command-service's job), config-file/data-root resolution, and service lifecycle events/records.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/red-cup-engineering/node-process-services-section.git"
+    "url": "git+https://github.com/red-cup-engineering/node-process-engineering-services-section.git"
   },
   "license": "MIT",
   "publishConfig": {
