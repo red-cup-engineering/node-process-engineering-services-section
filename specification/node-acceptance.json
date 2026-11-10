@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "basis": "Resolve an existing owning services section and return its root without writing runtime data.",
+  "cases": [
+    {
+      "id": "NODE-PROCESS-REFUSAL",
+      "role": "source",
+      "kind": "refusal",
+      "claim": "The data root resolver refuses a missing owner and leaves the path absent.",
+      "file": "test/config.test.mjs",
+      "test": "a missing owner is refused without creating it"
+    },
+    {
+      "id": "NODE-PROCESS-QUICKSTART",
+      "role": "consumer",
+      "kind": "example",
+      "claim": "An installed caller selects its owning section through an environment input without creating a data directory.",
+      "file": "examples/quickstart.test.mjs"
+    }
+  ]
+}

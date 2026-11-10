@@ -8,3 +8,9 @@
 <!-- 561-group-standards:badges:end -->
 
 Shared Node process boundary helpers: argv, environment, clock, entropy, stdio, command-result interpretation and lifecycle-record projection (execution itself is @red-cup-engineering/execute-javascript-node-command-service's job), config-file/data-root resolution, and service lifecycle events/records.
+
+## Acceptance
+
+The [process data-root requirements](specifications/requirements.md) define the owner boundary.
+
+Run `npm test` for the source suite. The [API reference](docs/API.md) links the source refusal and [runnable consumer example](examples/quickstart.test.mjs).
