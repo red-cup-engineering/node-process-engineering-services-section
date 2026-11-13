@@ -3,7 +3,7 @@ import test from "node:test";
 import { existsSync, mkdirSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { processDataRootConfig } from "@red-cup-engineering/node-process-services-section/config";
+import { processDataRootConfig } from "@red-cup-engineering/node-process-engineering-services-section/config";
 
 test("NODE-PROCESS-QUICKSTART", t => {
   const root = mkdtempSync(join(tmpdir(), "node-process-example-"));
