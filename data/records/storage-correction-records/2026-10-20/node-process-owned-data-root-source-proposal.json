@@ -2,11 +2,11 @@
   "kind": "NodeProcessOwnedDataRootSourceProposal",
   "at": "2026-10-20T23:57:29.072218+00:00",
   "state": "SOURCE_AND_NATIVE_NODE_QA_READY_FOR_INDEPENDENT_RECEIVING_NOT_PUBLISHED_OR_ACTIVATED",
-  "repository": "red-cup-engineering/node-process-services-section",
+  "repository": "red-cup-engineering/node-process-engineering-services-section",
   "repositoryId": 1425297553,
-  "owner": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section",
+  "owner": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section",
   "base": "9ea4f22f9e56fe67d936d629fae8033634903b7b",
-  "candidate": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate",
+  "candidate": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate",
   "version": "0.3.0",
   "versionReason": "Pre-1.0 minor release: intentionally removes documented arbitrary outside-checkout and app-owned data roots while preserving resolver API and explicit section selection.",
   "changedFiles": [
@@ -20,7 +20,7 @@
         "sha256": "ff736db14c862f21edc62af9277ac33c1151eb24a85048dce32fad3287bca52d"
       },
       "after": {
-        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/package.json",
+        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/package.json",
         "bytes": 1588,
         "sha256": "6e7e7a190785aa2a0447b56ae61b46028363a752171abc6fa2b03723ed977ba7",
         "gitBlob": "fef6008c0e2771c05c522e64f5fdff62c596ed68"
@@ -36,7 +36,7 @@
         "sha256": "aa5b313e6a1fc63b464896060c2ba1bb9881869b38969e7388e66f3fec9af03f"
       },
       "after": {
-        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/src/config.mjs",
+        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/src/config.mjs",
         "bytes": 8469,
         "sha256": "4325393e8722cc1aeeb6d25627531c6c0ee51d1fb4b654b2bfe41d152ee26387",
         "gitBlob": "c4390e30692b3fb9f7b1ee88d10e5c6923468f31"
@@ -52,7 +52,7 @@
         "sha256": "0956ffb4955588e390361b2d5850c5937dcfe56dad97f3aab6b6a94690f84df7"
       },
       "after": {
-        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/test/config.test.mjs",
+        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/test/config.test.mjs",
         "bytes": 9444,
         "sha256": "4f260290dad9355dc5e3c105105377533016277a9ab32b8244f28f0c56eeb2c1",
         "gitBlob": "62bda69711d70779880f7ad35a2c192fb3d55b54"
@@ -63,7 +63,7 @@
       "mode": "100644",
       "before": null,
       "after": {
-        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/specifications/requirements.md",
+        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/specifications/requirements.md",
         "bytes": 1946,
         "sha256": "45aedbb8b535df05bab626678001e2d6c012ffb103a243e66374174369052da4",
         "gitBlob": "9fcc6a10d8b97ec003cc5c1d9325e48f638358e0"
@@ -74,7 +74,7 @@
       "mode": "100644",
       "before": null,
       "after": {
-        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/specifications/design.md",
+        "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/candidate/specifications/design.md",
         "bytes": 1855,
         "sha256": "0e6e9337bea55f3105768a52d90d91eb0138e897be0c0c4e693866ab1f60fbd5",
         "gitBlob": "e3d57eb47dc983d51f46769278ca7fd16e5f74a1"
@@ -214,109 +214,109 @@
   },
   "evidence": [
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/source-intake.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/source-intake.json",
       "bytes": 4128,
       "sha256": "8b3bd414e0cb063ca2e61bf5861ee291bfda2da054a14b79a3c5e69882cc998b",
       "gitBlob": "098ad6c4c050bcfa11cc8dc7e4c7680260fe761e"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/source-integration-preflight.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/source-integration-preflight.json",
       "bytes": 420,
       "sha256": "2cdf2330104f0a5fc8a317c95bb72f4526f5002e91d5f0613d63e5dddcfa0a0a",
       "gitBlob": "a4a2e583cff7cb146fe99b87e3ea3096b091623e"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/intent.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/intent.json",
       "bytes": 1284,
       "sha256": "56869c77fbf2a5f9ce6bc78527c903104ba5da6ea703664fb21f6093c590c8c7",
       "gitBlob": "5398a5d7fa5cacb165a6f4105a83f24c940c81d2"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/stdout",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/stdout",
       "bytes": 5074,
       "sha256": "fb265b95f8a12be1ab58f69a24441ee1fb9e19238a37fd401ec098aea565b02c",
       "gitBlob": "0cf00e87432a677c5be0511edfe68c73ca5181fb"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/stderr",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/result.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/baseline-native/result.json",
       "bytes": 124,
       "sha256": "f61723c9d80cdbb9aec137bf58ea19c9dc945bb472872eaadbd0d72f5f1f6394",
       "gitBlob": "1e7b203770f69199da314d9f07485ca2913425dd"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/intent.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/intent.json",
       "bytes": 2826,
       "sha256": "ca7188bd4ad521654d64c10b31434c9b0bc3b30778a038aad68f5f8a7ca07463",
       "gitBlob": "9476293f7f95c8abb5faecdd9a751d08b81f6c59"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/stdout",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/stdout",
       "bytes": 9718,
       "sha256": "1dd02d20fe7d15981d33f2c7ae9abde8d133db55b8ef6e68bff620f809aff138",
       "gitBlob": "f4bab3c86b236202f32d79d3b243e2664ba11339"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/stderr",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/result.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native/result.json",
       "bytes": 181,
       "sha256": "f6e5d30c6aab6f53bb715fffb1e248462d3db0d0a24fcf63a4d00e841508f47b",
       "gitBlob": "0a11ecb11581d913810be33199eb5cb8dfb26071"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/config-test-v1-before-selector-fixture-fix.mjs",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/config-test-v1-before-selector-fixture-fix.mjs",
       "bytes": 9444,
       "sha256": "821866441e725553395890d937bce6c676fec85b4cc8914b68810841f014c96b",
       "gitBlob": "e25b0eb795971b49345bee86fd5fcf20aa6ded86"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/intent.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/intent.json",
       "bytes": 3014,
       "sha256": "d4640de724caa702b80b33a0e5ac34301f4e6d4e63b285a63b7c59b1ae5d10cf",
       "gitBlob": "502ed561686233de7c867467bc06f6b10131bc2e"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stdout",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stdout",
       "bytes": 3931,
       "sha256": "617b7afb12766225240019fe7b852a96cd3d561e44b49265ca1cbf9c0d53fc1d",
       "gitBlob": "f3da7592d3dd9f33f21a80da8b230c273fa80532"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stderr",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/result.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/result.json",
       "bytes": 181,
       "sha256": "3d15739dd1f5e45314c9870d7dac669e424af725154d6255ee0613ae1171aaee",
       "gitBlob": "793c3d853953cfe64fa4e09e3454b752de9a8267"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/cse-current-caller-source-census.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/cse-current-caller-source-census.json",
       "bytes": 545,
       "sha256": "f369e32128279f9384d23ca83d908500bc28e9ce68ccb4f77cf2d5fc7c664149",
       "gitBlob": "00afa60f5d304a1aca3a72c95d06a9072659b8d1"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/cse-current-callers/package.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/cse-current-callers/package.json",
       "bytes": 6107,
       "sha256": "ec8e3418b7c6d7a0d788e7581b86965be249a7c2efd0946c782522fc9e44227f",
       "gitBlob": "32fbaf8ac53714b180b633a0e41a34f6134e7563"
     },
     {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/cse-current-callers/scripts/system-federate.mjs",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/cse-current-callers/scripts/system-federate.mjs",
       "bytes": 4203,
       "sha256": "d68b144d46677f772c7f3564ad267a3c2272886173101deed0305de71b90db97",
       "gitBlob": "8e7c6a77126de9395405ac97d6ecb288e4d88296"

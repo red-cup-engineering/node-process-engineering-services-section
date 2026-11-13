@@ -5,7 +5,7 @@
   "correction": "git/trees/<commit> response sha was labeled as tree without binding git/commits/<commit>.tree; use actual commit.tree below. Original per-file Git blob+byte hashes remain checked independently.",
   "received": [
     {
-      "repository": "red-cup-engineering/node-process-services-section",
+      "repository": "red-cup-engineering/node-process-engineering-services-section",
       "commit": "9ea4f22f9e56fe67d936d629fae8033634903b7b",
       "tree": "651b9afd35a076f40f46dbcc8a734bcae2869843",
       "parents": [

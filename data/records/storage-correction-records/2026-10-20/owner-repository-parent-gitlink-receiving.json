@@ -1,10 +1,10 @@
 {
   "kind": "SourceOwnerRepositoryAndParentGitlinkReceiving",
   "at": "2026-10-21T00:01:39.180037+00:00",
-  "owner": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section",
+  "owner": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section",
   "repository": {
     "id": 1425297553,
-    "full_name": "red-cup-engineering/node-process-services-section",
+    "full_name": "red-cup-engineering/node-process-engineering-services-section",
     "private": false,
     "default_branch": "main",
     "head": "9ea4f22f9e56fe67d936d629fae8033634903b7b"
@@ -17,14 +17,14 @@
       "path": ".gitmodules",
       "blob": "493d66e26a4cca1cf71cabbd6ded689af7d3db9b",
       "selectedEntry": {
-        "name": "node-process-services-section",
-        "path": "services/node-process-services-section",
-        "url": "https://github.com/red-cup-engineering/node-process-services-section.git",
+        "name": "node-process-engineering-services-section",
+        "path": "services/node-process-engineering-services-section",
+        "url": "https://github.com/red-cup-engineering/node-process-engineering-services-section.git",
         "branch": "main"
       }
     },
     "gitlink": {
-      "path": "services/node-process-services-section",
+      "path": "services/node-process-engineering-services-section",
       "mode": "160000",
       "type": "commit",
       "sha": "9ea4f22f9e56fe67d936d629fae8033634903b7b"

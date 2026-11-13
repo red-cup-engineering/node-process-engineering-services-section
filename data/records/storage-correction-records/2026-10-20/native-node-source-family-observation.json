@@ -1,7 +1,7 @@
 {
   "kind": "NativeNodeSourceFamilyObservation",
   "at": "2026-10-21T00:01:01.016080+00:00",
-  "repository": "red-cup-engineering/node-process-services-section",
+  "repository": "red-cup-engineering/node-process-engineering-services-section",
   "base": "9ea4f22f9e56fe67d936d629fae8033634903b7b",
   "executedSource": {
     "src/clock.mjs": "f65ec1ff8deaa0b3ebb98295e28f0740b34c9dadeda010756c196e6480a185b9",
@@ -250,22 +250,22 @@
   ],
   "rawLogs": {
     "intent.json": {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/intent.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/intent.json",
       "bytes": 3014,
       "sha256": "d4640de724caa702b80b33a0e5ac34301f4e6d4e63b285a63b7c59b1ae5d10cf"
     },
     "stdout": {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stdout",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stdout",
       "bytes": 3931,
       "sha256": "617b7afb12766225240019fe7b852a96cd3d561e44b49265ca1cbf9c0d53fc1d"
     },
     "stderr": {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stderr",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "result.json": {
-      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/result.json",
+      "path": "/home/emsenn/info/lib/emsenn/services/561-group/services/engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-node-services-section/services/node-process-engineering-services-section/data/logs/owned-data-root-repair-logs/2026-10-20-source-v1/corrected-native-v2/result.json",
       "bytes": 181,
       "sha256": "3d15739dd1f5e45314c9870d7dac669e424af725154d6255ee0613ae1171aaee"
     }
