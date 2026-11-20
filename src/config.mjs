@@ -134,14 +134,14 @@ export function receiveOwnerDataRoot(root) {
         throw new TypeError("ownerDataRoot must name the actual owning services-section/data");
     }
     const section = dirname(root);
-    const rejection = (reason) => new TypeError(`ownerDataRoot (${root}): ${reason}`);
-    receiveSectionPathShape(section, rejection);
+    const refusal = (reason) => new TypeError(`ownerDataRoot (${root}): ${reason}`);
+    receiveSectionPathShape(section, refusal);
     // Valid-shaped missing roots retain CDE's original native filesystem errno.
     const info = lstatSync(root);
     if (!info.isDirectory() || realpathSync(root) !== root) {
         throw new TypeError("ownerDataRoot must be an existing unredirected directory");
     }
-    receiveSectionPathMetadata(section, rejection);
+    receiveSectionPathMetadata(section, refusal);
     return root;
 }
 
@@ -177,27 +177,27 @@ function explicitAbsolutePath(value) {
 }
 
 function receiveResolvedServicesSectionDataRoot(dataRoot, source) {
-    const rejection = (reason) => new Error(`process data root from ${source} (${dataRoot}): ${reason}`);
-    receiveSectionPathShape(dataRoot, rejection);
-    receiveSectionPathMetadata(dataRoot, rejection);
+    const refusal = (reason) => new Error(`process data root from ${source} (${dataRoot}): ${reason}`);
+    receiveSectionPathShape(dataRoot, refusal);
+    receiveSectionPathMetadata(dataRoot, refusal);
 }
 
 // One semantic rule: the resolver and explicit adapters differ only at their boundaries.
-function receiveSectionPathShape(dataRoot, rejection) {
+function receiveSectionPathShape(dataRoot, refusal) {
     if (basename(dataRoot) === "data") {
-        throw rejection("pass the owning services section above data/, never the data tier itself");
+        throw refusal("pass the owning services section above data/, never the data tier itself");
     }
     if (!basename(dataRoot).endsWith("-services-section") || basename(dataRoot) === "-services-section") {
-        throw rejection("expected an owning *-services-section directory; select it through config, environment or argv");
+        throw refusal("expected an owning *-services-section directory; select it through config, environment or argv");
     }
     const components = dataRoot.split(/[\\/]/);
     if (components.includes(".local") || components.includes("node_modules") ||
         dataRoot === "/gnu/store" || dataRoot.startsWith("/gnu/store/")) {
-        throw rejection("home .local, node_modules and immutable store paths cannot own runtime data");
+        throw refusal("home .local, node_modules and immutable store paths cannot own runtime data");
     }
 }
 
-function receiveSectionPathMetadata(dataRoot, rejection) {
+function receiveSectionPathMetadata(dataRoot, refusal) {
     let current = dataRoot;
     while (true) {
         let entry;
@@ -205,10 +205,10 @@ function receiveSectionPathMetadata(dataRoot, rejection) {
             entry = lstatSync(current);
         }
         catch (error) {
-            throw rejection(`owner ancestry must exist as real directories (${error?.code ?? "unreadable"})`);
+            throw refusal(`owner ancestry must exist as real directories (${error?.code ?? "unreadable"})`);
         }
         if (entry.isSymbolicLink() || !entry.isDirectory()) {
-            throw rejection("owner ancestry must be real directories without symlink backing");
+            throw refusal("owner ancestry must be real directories without symlink backing");
         }
         const parent = dirname(current);
         if (parent === current) break;
@@ -219,10 +219,10 @@ function receiveSectionPathMetadata(dataRoot, rejection) {
         dataEntry = lstatSync(resolve(dataRoot, "data"));
     }
     catch (error) {
-        if (error?.code !== "ENOENT") throw rejection(`cannot inspect data/ (${error?.code ?? "unreadable"})`);
+        if (error?.code !== "ENOENT") throw refusal(`cannot inspect data/ (${error?.code ?? "unreadable"})`);
     }
     if (dataEntry !== undefined && (dataEntry.isSymbolicLink() || !dataEntry.isDirectory())) {
-        throw rejection("existing data/ must be a real directory without symlink backing");
+        throw refusal("existing data/ must be a real directory without symlink backing");
     }
 }
 function readFlagValue(args, flag, label) {
